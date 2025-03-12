@@ -7,9 +7,7 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-COPY requirements.txt .
-
-RUN pip3 install -r requirements.txt
+RUN pip3 install Flask==2.3.2
 
 COPY app.py .
 
