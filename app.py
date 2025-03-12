@@ -1,40 +1,40 @@
 from flask import Flask, jsonify
 
-app = Flask(__name__)
+app = Flask("SICEI")
 
 alumnos = [
-    {"nombre": "Juan Perez", "matricula": "A01"},
-    {"nombre": "Maria Lopez", "matricula": "A02"},
-    {"nombre": "Carlos Sanchez", "matricula": "A03"},
-    {"nombre": "Ana Garcia", "matricula": "A04"},
-    {"nombre": "Luis Ramirez", "matricula": "A05"},
-    {"nombre": "Sofia Torres", "matricula": "A06"},
-    {"nombre": "Jorge Martinez", "matricula": "A07"},
-    {"nombre": "Laura Diaz", "matricula": "A08"},
-    {"nombre": "Pedro Ruiz", "matricula": "A09"},
-    {"nombre": "Elena Gonzalez", "matricula": "A10"}
+    {"nombre": "Alexis Rosaldo", "matricula": "A01"},
+    {"nombre": "Juan Lopez", "matricula": "A02"},
+    {"nombre": "Josue Sanchez", "matricula": "A03"},
+    {"nombre": "Karen Garcia", "matricula": "A04"},
+    {"nombre": "Alberto Ramirez", "matricula": "A05"},
+    {"nombre": "Liliana Torres", "matricula": "A06"},
+    {"nombre": "Jorge Rodriguez", "matricula": "A07"},
+    {"nombre": "Lourdes Diaz", "matricula": "A08"},
+    {"nombre": "Pedro Canul", "matricula": "A09"},
+    {"nombre": "Miriam Pacheco", "matricula": "A10"}
 ]
 
 profesores = [
-    {"nombre": "Dr. Alejandro Morales", "numeroEmpleado": "P01"},
-    {"nombre": "Dra. Patricia Vargas", "numeroEmpleado": "P02"},
-    {"nombre": "Dr. Roberto Jimenez", "numeroEmpleado": "P03"},
-    {"nombre": "Dra. Carmen Ortega", "numeroEmpleado": "P04"},
-    {"nombre": "Dr. Fernando Castro", "numeroEmpleado": "P05"},
-    {"nombre": "Dra. Isabel Mendoza", "numeroEmpleado": "P06"},
-    {"nombre": "Dr. Oscar Rios", "numeroEmpleado": "P07"},
-    {"nombre": "Dra. Adriana Silva", "numeroEmpleado": "P08"},
-    {"nombre": "Dr. Gabriel Rojas", "numeroEmpleado": "P09"},
-    {"nombre": "Dra. Monica Paredes", "numeroEmpleado": "P010"}
+    {"nombre": "Dr. Alejandro Gamboa", "numeroEmpleado": "P01"},
+    {"nombre": "Mtra. Maria Vargas", "numeroEmpleado": "P02"},
+    {"nombre": "Mtro. Roberto Jimenez", "numeroEmpleado": "P03"},
+    {"nombre": "Dra. Elena Ortega", "numeroEmpleado": "P04"},
+    {"nombre": "Dr. Fernando Rodriguez", "numeroEmpleado": "P05"},
+    {"nombre": "Dra. Isabel Castillo", "numeroEmpleado": "P06"},
+    {"nombre": "Mtro. Oscar Pacheco", "numeroEmpleado": "P07"},
+    {"nombre": "Dra. Sara Silva", "numeroEmpleado": "P08"},
+    {"nombre": "Mtro. Miguel Espadas", "numeroEmpleado": "P09"},
+    {"nombre": "Dra. Monica Canul", "numeroEmpleado": "P010"}
 ]
 
-@app.route('/alumnos', methods=['GET'])
+@app.route('/sicei/alumnos', methods=['GET'])
 def obtener_alumnos():
-    return jsonify(alumnos[:5])
+    return jsonify(alumnos[:10])
 
-@app.route('/profesores', methods=['GET'])
+@app.route('/sicei/profesores', methods=['GET'])
 def obtener_profesores():
-    return jsonify(profesores[:5])
+    return jsonify(profesores[:10])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
